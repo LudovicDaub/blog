@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %} {% block title %}Hello BlogController!{% endblock
+%} {% block body %}
+<section class="article">
+  <article>
+    <h2>Titre de l'article</h2>
+    <div class="metadata">
+      Ecrit le 04/04/2022 à 19h00 dans la catégorie Politique
+    </div>
+    <div class="content">
+      <img src="http://placehold.jp/350x150.png" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus
+        iste corrupti aspernatur dolorum, molestiae commodi.
+      </p>
+      <p>
+        Nulla autem deserunt officia eos ipsam eum itaque rerum laborum quia, at
+        excepturi assumenda aliquid?
+      </p>
+      <a href="{{ path('app_blog_show') }}" class="btn btn-primary"
+        >Lire la suite</a
+      >
+    </div>
+  </article>
+  <br />
+  <article>
+    <h2>Titre de l'article</h2>
+    <div class="metadata">
+      Ecrit le 04/04/2022 à 19h00 dans la catégorie Politique
+    </div>
+    <div class="content">
+      <img src="http://placehold.jp/350x150.png" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+        asperiores perspiciatis rem harum dolore ratione.
+      </p>
+      <p>
+        Impedit labore deleniti atque, adipisci earum quia voluptas asperiores
+        sit nobis eius consequatur? Unde, optio?
+      </p>
+      <a href="{{ path('app_blog_show') }}" class="btn btn-primary"
+        >Lire la suite</a
+      >
+    </div>
+  </article>
+  <br />
+  <article>
+    <h2>Titre de l'article</h2>
+    <div class="metadata">
+      Ecrit le 04/04/2022 à 19h00 dans la catégorie Politique
+    </div>
+    <div class="content">
+      <img src="http://placehold.jp/350x150.png" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        exercitationem veniam consectetur sapiente modi maxime!
+      </p>
+      <p>
+        Nihil error temporibus aut enim eligendi consequatur. Id eligendi
+        expedita velit recusandae eaque, accusamus blanditiis!
+      </p>
+      <a href="{{ path('app_blog_show') }}" class="btn btn-primary"
+        >Lire la suite</a
+      >
+    </div>
+  </article>
+</section>
+{% endblock %}

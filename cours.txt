@@ -1,0 +1,33 @@
+doctrine -> acces aux données -> Object Relationnal Model
+controlleurs -> gérer les traitements
+twig -> gérer les vues -> template
+
+src -> code php de l'appli
+
+*****CONROLLEURS*****
+
+*Controlleurs -> ecouter une route, ecouter la requette http, fabriquer une réponse http, renvoyer la réponse au navigateur
+*Faire des controlleurs -> symfony console make:controller
+*Nomage -> première lettre en majuscule et ensuite camelCase
+
+*****VUES*****
+
+*{{interpolation}} -> affichage de variables php dans twig
+*{% commande %} // {% fin de commande %} -> permet d'utiliser des commandes comme "if" etc
+*Héritage du template -> {% extends 'base.html.twig' %} {% block body %}//{% endblock %}
+
+*****DOCTRINE*****
+
+*Entité -> représente une table
+*Manager -> Manipuler une ligne (insertion, Mise à jour, suppression)
+*Repository -> selection de données
+*Migration -> fichier de management de bdd
+*Fixtures -> jeu de fausses données pour bdd
+
+*Création de la bdd -> symfony console doctrine:database:create
+*Création de table -> symfony console make:entity
+*Créer le fichier de migration -> symfony console make:migration
+*Migrer les données en bdd -> symfony console doctrine:migrations:migrate
+
+*Ajout de Fixtures  -> composer req orm-fixtures --dev
+                    -> symfony console make:fixtures
