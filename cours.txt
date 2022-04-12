@@ -26,6 +26,7 @@ src -> code php de l'appli
 
 *Création de la bdd -> symfony console doctrine:database:create
 *Création de table -> symfony console make:entity
+                   -> relation -> création de relation entre les entity
 *Créer le fichier de migration -> symfony console make:migration
 *Migrer les données en bdd -> symfony console doctrine:migrations:migrate
 
@@ -33,6 +34,10 @@ src -> code php de l'appli
                     -> symfony console make:fixtures
                     -> voir ArticleFixtures.php dans DataFixtures
                     -> symfony console doctrine:fixture:load
+
+*Faker -> composer req fzaninotto/faker
+       -> https://github.com/fzaninotto/Faker
+       -> symfony console doctrine:fixture:load
 
 *Création de formulaire -> symfony console make:form (convention = fin de nom par Type) = dossier Form
                         -> Constraint = contrainte de validattion, dans l'Entity.
