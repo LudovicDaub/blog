@@ -18,8 +18,10 @@ class BlogController extends AbstractController
      */
     public function index(ArticleRepository $repo): Response
     {
+        //récupère les articles -> depuis l'entity et le repository
         $articles = $repo->findAll();
 
+        //affichage de la page
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
             'articles' => $articles
@@ -43,13 +45,13 @@ class BlogController extends AbstractController
         if (!$article) {
             $article = new Article;
         }
-
+        //Appel du formulaire depuis Form
         $form = $this->createForm(ArticleType::class, $article);
-
+        //envoie l'affichage du form
         $form->handleRequest($request);
-
+        //controle si le formualire est bien rempli
         if ($form->isSubmitted() && $form->isValid()) {
-
+            //vérifie si l'article à une id
             if (!$article->getId()) {
                 $article->setCreatedAt(new \DateTime());
             }

@@ -13,24 +13,26 @@ class ArticleFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+        //création du faker
         $faker = Factory::create('fr_FR');
 
         //Création des catégories
         for ($i = 1; $i <= 3; $i++) {
             $category = new Category;
-            $category->setTitle($faker->sentence())
+            $category
+                ->setTitle($faker->sentence())
                 ->setDescription($faker->paragraph());
 
             $manager->persist($category);
         }
         //Création des articles
-        for ($j = 1; $j < mt_rand(4, 6); $j++) {
+        for ($j = 1; $j <= mt_rand(6, 9); $j++) {
             $article = new Article();
+            //$content = '<p>' . join($faker->paragraphs(5), '</p> <p>') . '</p>';
 
-            $content = '<p>' . join($faker->paragraphs(5), '</p> <p>') . '</p>';
-
-            $article->setTitle($faker->sentence())
-                ->setContent($content)
+            $article
+                ->setTitle($faker->sentence())
+                ->setContent($faker->paragraph())
                 ->setImage($faker->imageUrl())
                 ->setCreatedAt($faker->dateTimeBetween('-6 months'))
                 ->setCategory($category);
@@ -38,15 +40,16 @@ class ArticleFixtures extends Fixture
             $manager->persist($article);
         }
         //Création des commentaires
-        for ($k = 1; $k <= mt_rand(4, 10); $k++) {
+        for ($k = 1; $k <= mt_rand(8, 15); $k++) {
             $comment = new Comment;
 
-            $content = '<p>' . join($faker->paragraphs(2), '</p> <p>') . '</p>';
-
+            //$content = '<p>' . join($faker->paragraphs(2), '</p> <p>') . '</p>';
+            //date de commentaire entre aujourd'hui et la création de l'article
             $days = (new \DateTime())->diff($article->getCreatedAt())->days;
 
-            $comment->setAuthor($faker->name())
-                ->setContent($content)
+            $comment
+                ->setAuthor($faker->name())
+                ->setContent($faker->paragraph())
                 ->setCreatedAt($faker->dateTimeBetween('-' . $days . 'days'))
                 ->setArticle($article);
 

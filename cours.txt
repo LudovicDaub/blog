@@ -1,7 +1,6 @@
 doctrine -> acces aux données -> Object Relationnal Model
 controlleurs -> gérer les traitements
 twig -> gérer les vues -> template
-
 src -> code php de l'appli
 
 *****CONROLLEURS*****
