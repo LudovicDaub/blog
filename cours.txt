@@ -31,3 +31,7 @@ src -> code php de l'appli
 
 *Ajout de Fixtures  -> composer req orm-fixtures --dev
                     -> symfony console make:fixtures
+                    -> voir ArticleFixtures.php dans DataFixtures
+                    -> symfony console doctrine:fixture:load
+
+*Création de formulaire -> symfony console make:form (convention = fin de nom par Type)

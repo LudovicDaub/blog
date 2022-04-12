@@ -21,7 +21,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">SymBlog</a>
+        <a class="navbar-brand" href="{{ path('app_home') }}">SymBlog</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,10 +37,12 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/blog"> Articles </a>
+              <a class="nav-link" href="{{ path('app_blog') }}"> Articles </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/new"> Créer un nouvel article </a>
+              <a class="nav-link" href="{{ path('app_blog_create') }}">
+                Créer un nouvel article
+              </a>
             </li>
           </ul>
         </div>

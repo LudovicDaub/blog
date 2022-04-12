@@ -12,6 +12,12 @@ class ArticleFixtures extends Fixture
     {
         for ($i = 1; $i < 10; $i++) {
             $article = new Article();
+            $article->setTitle("Titre de l'article n°$i")
+                ->setContent("Contenu de l'article n°$i")
+                ->setImage("http://placehold.jp/350x150.png")
+                ->setCreatedAt(new \DateTime());
+
+            $manager->persist($article);
         }
 
         $manager->flush();
