@@ -34,4 +34,7 @@ src -> code php de l'appli
                     -> voir ArticleFixtures.php dans DataFixtures
                     -> symfony console doctrine:fixture:load
 
-*Création de formulaire -> symfony console make:form (convention = fin de nom par Type)
+*Création de formulaire -> symfony console make:form (convention = fin de nom par Type) = dossier Form
+                        -> Constraint = contrainte de validattion, dans l'Entity.
+                        -> form_start, row, widget, end.
+                        -> create + update = même fonction dans le controller
