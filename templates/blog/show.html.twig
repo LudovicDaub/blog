@@ -6,19 +6,37 @@
     {{ article.createdAt | date('H:i') }} dans la catégorie
     {{ article.category.title }}
   </div>
+  <br />
   <div class="content">
     <img src="{{ article.image }}" alt="" />
+    <br />
+    <br />
     <p>{{ article.content | raw }}</p>
   </div>
 </article>
 
 <section id="comment">
+  {% if app.user %}
+  {{ form_start(commentForm) }}
+  {{ form_row(commentForm.author, {'attr': {'placeholder': "Votre nom"}}) }}
+  {{ form_row(commentForm.content, {'attr': {'placeholder': "Votre commentaire"
+  }}) }}
+  <button type="submit" class="btn btn-success">Commenter</button>
+  {{ form_end(commentForm) }}
+  {% else %}
+  <h3>Veuillez vous connecter pour commenter</h3>
+  <a href="{{ path('app_security_login') }}" class="btn btn-primary"
+    >Se Connecter</a
+  >
+  {% endif %}
+  <br />
+  <h3>{{ article.comments | length }} commentaires :</h3>
   {% for comment in article.comments %}
   <div class="comment">
     <div class="row">
       <div class="col-3">
-        {{ comment.author }} (<small
-          >{{ comment.createdAt | date('d/m/Y à H:i')}}</small
+        {{ comment.author }} (<small>
+          {{ comment.createdAt | date('d/m/Y à H:i')}} </small
         >)
       </div>
       <div class="col-9">

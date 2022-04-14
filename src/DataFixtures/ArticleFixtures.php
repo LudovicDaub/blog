@@ -28,12 +28,11 @@ class ArticleFixtures extends Fixture
         //Création des articles
         for ($j = 1; $j <= mt_rand(6, 9); $j++) {
             $article = new Article();
-            //$content = '<p>' . join($faker->paragraphs(5), '</p> <p>') . '</p>';
 
             $article
                 ->setTitle($faker->sentence())
                 ->setContent($faker->paragraph())
-                ->setImage($faker->imageUrl())
+                ->setImage("https://picsum.photos/500/300")
                 ->setCreatedAt($faker->dateTimeBetween('-6 months'))
                 ->setCategory($category);
 
@@ -43,7 +42,6 @@ class ArticleFixtures extends Fixture
         for ($k = 1; $k <= mt_rand(8, 15); $k++) {
             $comment = new Comment;
 
-            //$content = '<p>' . join($faker->paragraphs(2), '</p> <p>') . '</p>';
             //date de commentaire entre aujourd'hui et la création de l'article
             $days = (new \DateTime())->diff($article->getCreatedAt())->days;
 
