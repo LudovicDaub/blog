@@ -24,19 +24,20 @@ class ArticleFixtures extends Fixture
                 ->setDescription($faker->paragraph());
 
             $manager->persist($category);
-        }
-        //Création des articles
-        for ($j = 1; $j <= mt_rand(6, 9); $j++) {
-            $article = new Article();
 
-            $article
+            //Création des articles
+            for ($j = 1; $j <= mt_rand(6, 9); $j++) {
+                $article = new Article();
+
+                $article
                 ->setTitle($faker->sentence())
                 ->setContent($faker->paragraph())
                 ->setImage("https://picsum.photos/500/300")
                 ->setCreatedAt($faker->dateTimeBetween('-6 months'))
                 ->setCategory($category);
 
-            $manager->persist($article);
+                $manager->persist($article);
+            }
         }
         //Création des commentaires
         for ($k = 1; $k <= mt_rand(8, 15); $k++) {
